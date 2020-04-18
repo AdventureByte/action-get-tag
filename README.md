@@ -10,7 +10,7 @@ Dead simple:
 
 ```yaml
     steps:
-      - uses: olegtarasov/get-tag@v2
+      - uses: AdventureByte/action-get-tag@v2
         id: tagName
         with:
           tagRegex: "foobar-(.*)"  # Optional. Returns specified group text as tag name. Full tag string is returned if regex is not defined.
@@ -18,7 +18,7 @@ Dead simple:
       - name: Some other step # Output usage example
         with:
           tagname: ${{ steps.tagName.outputs.tag }}
-      - name: Yet another step # Environment variabl usage example
+      - name: Yet another step # Environment variable usage example
         run: |
           docker build . --file Dockerfile --tag docker.pkg.github.com/someimage:$GIT_TAG_NAME
 
